@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jaldhara/modules/home/home_view.dart';
-import 'package:jaldhara/modules/signup/signup_view.dart';
+import 'package:jaldhara/modules/login/login_view.dart';
 import 'package:jaldhara/resources/app_colors.dart';
 
 import 'package:jaldhara/resources/app_images.dart';
@@ -9,14 +8,14 @@ import 'package:jaldhara/utils/appBtn.dart';
 import '../../utils/appStrings.dart';
 import '../../utils/appTxtField.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignUpView extends StatefulWidget {
+  const SignUpView({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignUpView> createState() => _SignUpViewState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignUpViewState extends State<SignUpView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Container(
+                   Container(
                     height: 100,
                   width: 150,
                   decoration: BoxDecoration( image: DecorationImage(image: AssetImage('assets/Images/iconlogo.png'))),
@@ -56,26 +55,39 @@ class _LoginScreenState extends State<LoginScreen> {
                       color: AppColors.white,
                     ),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text("Login"),
-                      
-                       GestureDetector(onTap: (){
-                        // Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext (context) => SignUpView())));
-                        Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => const SignUpView()),
-  );
-
-                       },child: Text("SignUp")),
-                      ]
-
-                    ),
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          GestureDetector(
+                              onTap: () {
+                                // Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext (context) => SignUpView())));
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const LoginScreen()),
+                                );
+                              },
+                              child: Text("Login")),
+                          Text("SignUp"),
+                        ]),
                   ),
                   SizedBox(height: 10),
                   TxtField(
                     // controller: loginController.mobno_ctrl,
-                    
+                    obscure: false,
+                    icon: const Icon(Icons.supervised_user_circle),
+                    hint: AppStrings.username,
+                    keyboard: TextInputType.none,
+                  ),
+                  TxtField(
+                    // controller: loginController.mobno_ctrl,
+                    obscure: false,
+                    icon: const Icon(Icons.mail),
+                    hint: AppStrings.email,
+                    keyboard: TextInputType.emailAddress,
+                  ),
+                  TxtField(
+                    // controller: loginController.mobno_ctrl,
                     obscure: false,
                     icon: const Icon(Icons.phone),
                     hint: AppStrings.mobno,
@@ -85,24 +97,16 @@ class _LoginScreenState extends State<LoginScreen> {
                     // controller: loginController.mobno_ctrl,
                     obscure: false,
                     icon: const Icon(Icons.password),
-                    hint: AppStrings.password,
-                    keyboard: TextInputType.emailAddress,
+                    hint: AppStrings.newPassword,
+                    keyboard: TextInputType.visiblePassword,
                   ),
-                  Text("Forgot Password?"),
                   ElevatedButton(onPressed: (){
 
                     Navigator.push(
     context,
-    MaterialPageRoute(builder: (context) => const HomeScreen()),
+    MaterialPageRoute(builder: (context) => const LoginScreen()),
   );
-                  }, child: Text('Login'))
-  //                 GestureDetector(onTap: (){
-  //                   debugPrint('tapped');
-  //                   Navigator.push(
-  //   context,
-  //   MaterialPageRoute(builder: (context) => const HomeScreen()),
-  // );
-  //                 }, child: AppButton(label: 'Login',)),
+                  }, child: Text('Sign Up')),
                 ],
               ),
             ),

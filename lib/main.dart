@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:jaldhara/modules/home/home_view.dart';
 import 'package:jaldhara/modules/login/login_view.dart';
 import 'package:jaldhara/modules/splash.dart';
+//import 'package:jaldhara/modules/splash.dart';
 // import 'package:jaldhara/modules/splash.dart';
 
 void main() {
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      home: SplashScreen(),
       
       
     );

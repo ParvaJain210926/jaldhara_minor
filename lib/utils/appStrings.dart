@@ -6,4 +6,7 @@ class AppStrings{
   static const account = "Already have an account? ";
   static const signup = "SignUp";
   static const otp = " Enter OTP";
+  static const email = " Enter Email";
+  static const username = " Enter Username";
+  static const newPassword = " Enter New Password";
 }
