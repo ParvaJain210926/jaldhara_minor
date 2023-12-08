@@ -25,12 +25,12 @@ class _SignUpViewState extends State<SignUpView> {
           height: double.infinity,
           width: double.infinity,
           decoration: BoxDecoration(
-              color: AppColors.loginColor,
+              color: Color.fromARGB(255, 169, 235, 235),
               image: DecorationImage(
                   fit: BoxFit.cover, image: AssetImage(AppImages.loginPage))),
           child: Center(
             child: Container(
-              height: 550,
+              height: 580,
               width: 350,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(25)),
@@ -46,7 +46,7 @@ class _SignUpViewState extends State<SignUpView> {
                   decoration: BoxDecoration( image: DecorationImage(image: AssetImage('assets/Images/iconlogo.png'))),
                     
                     ),
-                    SizedBox(height: 40,),
+                    SizedBox(height: 20,),
                   Container(
                     height: 40,
                     width: 250,
@@ -71,14 +71,16 @@ class _SignUpViewState extends State<SignUpView> {
                           Text("SignUp"),
                         ]),
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 8),
                   TxtField(
                     // controller: loginController.mobno_ctrl,
                     obscure: false,
                     icon: const Icon(Icons.supervised_user_circle),
                     hint: AppStrings.username,
                     keyboard: TextInputType.none,
+                    
                   ),
+                
                   TxtField(
                     // controller: loginController.mobno_ctrl,
                     obscure: false,
@@ -100,6 +102,16 @@ class _SignUpViewState extends State<SignUpView> {
                     hint: AppStrings.newPassword,
                     keyboard: TextInputType.visiblePassword,
                   ),
+                  TxtField(
+                    obscure: true,
+                    icon: const Icon(Icons.password),
+                    hint:AppStrings.confnewPassword,
+                    keyboard: TextInputType.visiblePassword,
+
+
+
+                  ),
+                  SizedBox(height:10),
                   ElevatedButton(onPressed: (){
 
                     Navigator.push(

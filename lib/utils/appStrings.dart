@@ -9,4 +9,5 @@ class AppStrings{
   static const email = " Enter Email";
   static const username = " Enter Username";
   static const newPassword = " Enter New Password";
+  static const confnewPassword="Confirm Password";
 }
